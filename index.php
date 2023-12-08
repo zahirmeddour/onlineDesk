@@ -27,9 +27,9 @@ $duplicates = $mysql->mysqldb_query("SELECT COUNT(SerialCode) AS SerialCodeCount
             <?php
             if (!retPost("search")) {
                 $res = $mysql->mysqldb_query(
-                    "SELECT id, SerialCode, Stat, ActivationDate, IPAddress, geolocation " .
-                            "FROM Serial " .
-                            "WHERE SerialCode LIKE '%77-77-77-77%'");
+                    "SELECT SerialCode " .
+                    "FROM Serial " .
+                    "WHERE SerialCode LIKE '%77-77-77-77%'");
             }
             ?>
         </div>
