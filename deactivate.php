@@ -7,7 +7,8 @@ if (!$serial) {
 
 $mysql = new My();
 $mysql->myqsldb_Connect();
-$result = $mysql->mysqldb_query("UPDATE Serial " .
+$result = $mysql->mysqldb_query(
+    "UPDATE Serial " .
     "SET Status = 'non-active', " .
     "ActivationDate = '01/01/2000', " .
     "IPAddress = '127.0.0.1', " .

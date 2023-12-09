@@ -4,10 +4,12 @@ require_once('mysql.class.php');
 
 $mysql = new My();
 $mysql->myqsldb_Connect();
-$res = $mysql->mysqldb_query("SELECT id, SerialCode, Stat, ActivationDate, IPAddress, geolocation " .
+$res = $mysql->mysqldb_query(
+    "SELECT id, SerialCode, Stat, ActivationDate, IPAddress, geolocation " .
     "FROM Serial " .
     "ORDER BY id DESC");
-$duplicates = $mysql->mysqldb_query("SELECT COUNT(SerialCode) AS SerialCodeCount, SerialCode, MIN(id) AS MinID " .
+$duplicates = $mysql->mysqldb_query(
+    "SELECT COUNT(SerialCode) AS SerialCodeCount, SerialCode, MIN(id) AS MinID " .
     "FROM Serial GROUP BY SerialCode HAVING COUNT(SerialCode) > 1;");
 
 ?>
