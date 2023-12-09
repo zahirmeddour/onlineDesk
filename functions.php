@@ -1,12 +1,13 @@
 <?php
 
-function redirectTo($link)
-{
+function redirectTo($link) {
     header("Location: http://{$link}");
 }
 
-function uploadFile($fileName)
-{
+function uploadFile($fileName) {
+    if(!isset($fileName)) {
+        return null;
+    }
     if (is_uploaded_file($_FILES['uploadfile']['tmp_name'])) {
         if (move_uploaded_file($_FILES['uploadfile']['tmp_name'], '/var/www/uploads/' . $_FILES['uploadfile']['name'])) {
             return 1;
@@ -18,8 +19,12 @@ function uploadFile($fileName)
     }
 }
 
-function request($url)
-{
+function request($url) {
+
+    if(!isset($url)) {
+        return null;
+    }
+
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -29,32 +34,33 @@ function request($url)
     return $res;
 }
 
-function retJSON($JSONData)
-{
+function retJSON($JSONData) {
+
+    if(!isset($JSONData)) {
+        return null;
+    }
+
     $jsonDat = file_get_contents($JSONData);
     $jsonDat = json_decode($jsonDat);
 
     return $jsonDat;
 }
 
-function retPost($postVariable)
-{
+function retPost($postVariable) {
     if (isset($_POST[$postVariable]))
         return $_POST[$postVariable];
     else
         return null;
 }
 
-function retGet($getVariable)
-{
+function retGet($getVariable) {
     if (isset($getVariable))
         return $getVariable;
     else
         return null;
 }
 
-function getRemoteIP()
-{
+function getRemoteIP() {
     if (isset($_SERVER['REMOTE_ADDR'])) {
         return $_SERVER['REMOTE_ADDR'];
     } else {
@@ -62,8 +68,7 @@ function getRemoteIP()
     }
 }
 
-function getServerIP()
-{
+function getServerIP() {
     if (isset($_SERVER['HTTP_HOST'])) {
         return $_SERVER['HTTP_HOST'];
     } else {
