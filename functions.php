@@ -58,7 +58,7 @@ function getRemoteIP()
     if (isset($_SERVER['REMOTE_ADDR'])) {
         return $_SERVER['REMOTE_ADDR'];
     } else {
-        die ("Problem avec L'adresse a distance");
+        return null;
     }
 }
 
@@ -67,6 +67,6 @@ function getServerIP()
     if (isset($_SERVER['HTTP_HOST'])) {
         return $_SERVER['HTTP_HOST'];
     } else {
-        die ("Problem avec l'adresse Serveur");
+        return null;
     }
 }
