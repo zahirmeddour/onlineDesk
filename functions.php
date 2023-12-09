@@ -1,6 +1,9 @@
 <?php
 
 function redirectTo($link) {
+    if(!isset($link)) {
+        return null;
+    }
     header("Location: http://{$link}");
 }
 
