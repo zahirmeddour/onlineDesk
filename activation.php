@@ -1,6 +1,6 @@
 <?php
 
-$serial = retPost('serial');
+$serial = retPost("serial");
 $remoteIP = getRemoteIP();
 
 $mysql = new My();

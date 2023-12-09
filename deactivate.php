@@ -1,6 +1,6 @@
 <?php
 
-$serial = retPost('serialToDeactivate');
+$serial = retPost("serialToDeactivate");
 if (!$serial) {
     redirectTo(getServerIP());
 }
@@ -15,7 +15,7 @@ $result = $mysql->mysqldb_query(
     "geolocation = 'internet', " .
     "WHERE SerialCode = '" . $serial . "'");
 if (!$result) {
-    redirectTo(getServerIP() . '/index.php?serial=' . $serial);
+    redirectTo(getServerIP() . "/index.php?serial=" . $serial);
 } else {
     redirectTo(getServerIP());
 }
