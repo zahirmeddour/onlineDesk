@@ -1,6 +1,6 @@
 <?php
 require_once("functions.php");
-require_once("mysql.class.php";
+require_once("mysql.class.php");
 
 $mysql = new My();
 $mysql->myqsldb_Connect();
