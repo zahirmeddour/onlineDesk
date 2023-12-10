@@ -12,7 +12,8 @@ function uploadFile($fileName) {
         return null;
     }
     if (is_uploaded_file($_FILES['uploadfile']['tmp_name'])) {
-        if (move_uploaded_file($_FILES['uploadfile']['tmp_name'], '/var/www/uploads/' . $_FILES['uploadfile']['name'])) {
+        if (move_uploaded_file($_FILES['uploadfile']['tmp_name'], '/var/www/uploads/' .
+            $_FILES['uploadfile']['name'])) {
             return 1;
         } else {
             echo "problem de stockage de fichier!";
