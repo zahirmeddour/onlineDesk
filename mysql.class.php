@@ -4,10 +4,10 @@ require_once("config.php");
 
 class My
 {
-    private $db_host = $config_db_host;
-    private $db_username = $config_db_username;
-    private $db_password = $config_db_password;
-    private $db_name = $config_db_name;
+    private $db_host = "localhost";
+    private $db_username = "root";
+    private $db_password = "";
+    private $db_name = "onlineDesktop";
     private $link = null;
 
     public function myqsldb_Connect()
