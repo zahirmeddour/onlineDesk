@@ -10,7 +10,8 @@ $res = $mysql->mysqldb_query(
     "ORDER BY id DESC");
 $duplicates = $mysql->mysqldb_query(
     "SELECT COUNT(SerialCode) AS SerialCodeCount, SerialCode, MIN(id) AS MinID " .
-    "FROM Serial GROUP BY SerialCode HAVING COUNT(SerialCode) > 1;");
+    "FROM Serial " .
+    "GROUP BY SerialCode HAVING COUNT(SerialCode) > 1;");
 ?>
 <!DOCTYPE html>
 <html lang="en">
