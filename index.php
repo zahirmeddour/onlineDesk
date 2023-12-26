@@ -58,7 +58,7 @@ $duplicates = $mysql->mysqldb_query(
             <input type="submit" value="desactivé" class="btn btn-secondary" style="margin: 15px;">
         </div>
     </form>
-    <form enctype="multipart/form-data" action="upload.php.bak" method="post" class="row" style=
+    <form enctype="multipart/form-data" action="uploadFile.php" method="post" class="row" style=
     "margin: 15px; border: 1px black solid; margin: 10px;">
         <div class="col">
             <input name="uploadfile" type="file" style="margin: 15px;">

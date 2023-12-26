@@ -12,8 +12,8 @@ function uploadFile($fileName)
 {
     if (!isset($fileName))
         return null;
-    if (is_uploaded_file($_FILES['uploadfile']['tmp_name'])) {
-        if (move_uploaded_file($_FILES['uploadfile']['tmp_name'], '/var/www/uploads/' .
+    elseif (is_uploaded_file($_FILES['uploadfile']['tmp_name'])) {
+        if (move_uploaded_file($_FILES['uploadfile']['tmp_name'], './uploads/' .
             $_FILES['uploadfile']['name'])) {
             return 1;
         } else {
