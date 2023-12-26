@@ -27,10 +27,10 @@ $duplicates = $mysql->mysqldb_query(
             <input type="text" name="recherche" placeholder="recherche" style="width: 200px; margin: 15px;">
             <?php
             //if (!retPost("search")) {
-                $duplicate2 = $mysql->mysqldb_query(
-                    "SELECT SerialCode " .
-                    "FROM Serial " .
-                    "WHERE SerialCode LIKE '%77-77-77-77%'");
+            $duplicate2 = $mysql->mysqldb_query(
+                "SELECT SerialCode " .
+                "FROM Serial " .
+                "WHERE SerialCode LIKE '%77-77-77-77%'");
             //}
             ?>
         </div>

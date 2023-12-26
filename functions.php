@@ -1,13 +1,15 @@
 <?php
 
-function redirectTo($link) {
-    if(!isset($link))
+function redirectTo($link)
+{
+    if (!isset($link))
         return null;
     header("Location: http://{$link}");
 }
 
-function uploadFile($fileName) {
-    if(!isset($fileName)) {
+function uploadFile($fileName)
+{
+    if (!isset($fileName)) {
         return null;
     }
     if (is_uploaded_file($_FILES['uploadfile']['tmp_name'])) {
@@ -22,9 +24,10 @@ function uploadFile($fileName) {
     }
 }
 
-function request($url) {
+function request($url)
+{
 
-    if(!isset($url)) {
+    if (!isset($url)) {
         return null;
     }
 
@@ -37,9 +40,10 @@ function request($url) {
     return $res;
 }
 
-function retJSON($JSONData) {
+function retJSON($JSONData)
+{
 
-    if(!isset($JSONData)) {
+    if (!isset($JSONData)) {
         return null;
     }
 
@@ -49,25 +53,29 @@ function retJSON($JSONData) {
     return $jsonDat;
 }
 
-function retPost($postVariable) {
+function retPost($postVariable)
+{
     if (!isset($_POST[$postVariable]))
         return null;
     return $_POST[$postVariable];
 }
 
-function retGet($getVariable) {
+function retGet($getVariable)
+{
     if (!isset($getVariable))
         return null;
     return $getVariable;
 }
 
-function getRemoteIP() {
+function getRemoteIP()
+{
     if (!isset($_SERVER['REMOTE_ADDR']))
         return null;
     return $_SERVER['REMOTE_ADDR'];
 }
 
-function getServerIP() {
+function getServerIP()
+{
     if (!isset($_SERVER['HTTP_HOST']))
         return null;
     return $_SERVER['HTTP_HOST'];
