@@ -9,9 +9,8 @@ function redirectTo($link)
 
 function uploadFile($fileName)
 {
-    if (!isset($fileName)) {
+    if (!isset($fileName))
         return null;
-    }
     if (is_uploaded_file($_FILES['uploadfile']['tmp_name'])) {
         if (move_uploaded_file($_FILES['uploadfile']['tmp_name'], '/var/www/uploads/' .
             $_FILES['uploadfile']['name'])) {
