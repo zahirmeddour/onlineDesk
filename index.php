@@ -25,15 +25,20 @@ $duplicates = $mysql->mysqldb_query(
 <div class="container">
     <form action="index.php" method="post" class="row" style="margin: 15px; border: 1px black solid; margin: 10px;">
         <div class="col">
-            <input type="text" name="recherche" placeholder="recherche" style="width: 200px; margin: 15px;">
+            <input type="text" name="search" placeholder="recherche" style="width: 200px; margin: 15px;">
             <?php
-            if (!retPost("search")) {
-                $duplicate2 = $mysql->mysqldb_query(
+            // check what's wrong with this code??
+            // seems everything is okay, but it doesn't work
+/*            if (retPost("search") == null) {
+                die("probem search");
+            } else {
+                $search = retPost("search");
+                $res = $mysql->mysqldb_query(
                     "SELECT SerialCode " .
-                    "FROM Serial " .
-                    "WHERE SerialCode LIKE '" . retPost("search") . "'");
+                    "FROM serial " .
+                    "WHERE SerialCode LIKE '%" . $_POST["search"] . "%'");
             }
-            ?>
+*/            ?>
         </div>
         <div class="col">
             <input type="submit" value="recherche" class="btn btn-secondary" style="margin: 15px;">

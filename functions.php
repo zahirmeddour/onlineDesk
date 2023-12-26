@@ -4,7 +4,8 @@ function redirectTo($link)
 {
     if (!isset($link))
         return null;
-    header("Location: http://{$link}");
+    else
+        header("Location: http://{$link}");
 }
 
 function uploadFile($fileName)
@@ -56,26 +57,30 @@ function retPost($postVariable)
 {
     if (!isset($_POST[$postVariable]))
         return null;
-    return $_POST[$postVariable];
+    else
+        return $_POST[$postVariable];
 }
 
 function retGet($getVariable)
 {
     if (!isset($getVariable))
         return null;
-    return $getVariable;
+    else
+        return $getVariable;
 }
 
 function getRemoteIP()
 {
     if (!isset($_SERVER['REMOTE_ADDR']))
         return null;
-    return $_SERVER['REMOTE_ADDR'];
+    else
+        return $_SERVER['REMOTE_ADDR'];
 }
 
 function getServerIP()
 {
     if (!isset($_SERVER['HTTP_HOST']))
         return null;
-    return $_SERVER['HTTP_HOST'];
+    else
+        return $_SERVER['HTTP_HOST'];
 }
