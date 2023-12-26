@@ -1,9 +1,8 @@
 <?php
 
 function redirectTo($link) {
-    if(!isset($link)) {
+    if(!isset($link))
         return null;
-    }
     header("Location: http://{$link}");
 }
 
@@ -51,31 +50,25 @@ function retJSON($JSONData) {
 }
 
 function retPost($postVariable) {
-    if (isset($_POST[$postVariable]))
-        return $_POST[$postVariable];
-    else
+    if (!isset($_POST[$postVariable]))
         return null;
+    return $_POST[$postVariable];
 }
 
 function retGet($getVariable) {
-    if (isset($getVariable))
-        return $getVariable;
-    else
+    if (!isset($getVariable))
         return null;
+    return $getVariable;
 }
 
 function getRemoteIP() {
-    if (isset($_SERVER['REMOTE_ADDR'])) {
-        return $_SERVER['REMOTE_ADDR'];
-    } else {
+    if (!isset($_SERVER['REMOTE_ADDR']))
         return null;
-    }
+    return $_SERVER['REMOTE_ADDR'];
 }
 
 function getServerIP() {
-    if (isset($_SERVER['HTTP_HOST'])) {
-        return $_SERVER['HTTP_HOST'];
-    } else {
+    if (!isset($_SERVER['HTTP_HOST']))
         return null;
-    }
+    return $_SERVER['HTTP_HOST'];
 }
